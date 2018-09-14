@@ -17,6 +17,7 @@ import com.iamagamedev.sharpdeveloperstestjava.repository.models.TransactionObje
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -133,14 +134,15 @@ public class TransactionsListAdapter extends RecyclerView.Adapter<TransactionsLi
     private String getCompareString(int i) {
         String filter = PreferenceManager.getDefaultSharedPreferences(ThisApplication.getInstance())
                 .getString(Constants.SORTING, null);
-        switch (filter) {
+        switch (Objects.requireNonNull(filter)) {
             case Constants.SORT_BY_NAME:
                 return transactionObjects.get(i).getUsername().toUpperCase().trim();
             case Constants.SORT_BY_DATE:
                 return transactionObjects.get(i).getDate().toUpperCase().trim();
             case Constants.SORT_BY_AMOUNT:
                 return transactionObjects.get(i).getAmount().toUpperCase().trim();
+            default:
+                return transactionObjects.get(i).getUsername().toUpperCase().trim();
         }
-        return "";
     }
 }

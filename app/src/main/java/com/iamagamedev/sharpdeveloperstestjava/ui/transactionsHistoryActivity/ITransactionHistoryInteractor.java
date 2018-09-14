@@ -10,14 +10,18 @@ import java.util.List;
 
 public interface ITransactionHistoryInteractor {
 
-    interface OnTransactionHistoryListener extends IGeneralInteractorListener{
+    interface OnTransactionHistoryListener extends IGeneralInteractorListener {
         void onSuccess(TransactionListObject transactionObjects);
+
         void onVerificationSuccess(Intent intent);
+
         void onSortFinished(List<TransactionObject> transactionObjects);
     }
 
     void getTransactionList(OnTransactionHistoryListener listener);
+
     void verifyRequest(TransactionObject transactionObject, OnTransactionHistoryListener listener);
-    void sortList(List<TransactionObject>transactionObjects, String filter,
+
+    void sortList(List<TransactionObject> transactionObjects, String filter,
                   OnTransactionHistoryListener listener);
 }

@@ -17,9 +17,7 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
 import com.iamagamedev.sharpdeveloperstestjava.R;
-import com.iamagamedev.sharpdeveloperstestjava.app.Constants;
 import com.iamagamedev.sharpdeveloperstestjava.app.SharedPreferencesClass;
-import com.iamagamedev.sharpdeveloperstestjava.app.ThisApplication;
 import com.iamagamedev.sharpdeveloperstestjava.ui.loginActivity.LoginActivity;
 import com.iamagamedev.sharpdeveloperstestjava.ui.transactionsHistoryActivity.TransactionHistoryActivity;
 
@@ -41,7 +39,6 @@ public class GeneralActivityWithMenu extends GeneralActivity implements Navigati
         LayoutInflater layoutInflater = getLayoutInflater();
 
         final View container = layoutInflater.inflate(R.layout.activity_general_with_menu, (ViewGroup) getWindow().getDecorView(), false);
-        //noinspection ConstantConditions
         layoutInflater.inflate(layoutResID, (ViewGroup) container.findViewById(R.id.cont_root), true);
         super.setContentView(container);
 
@@ -78,7 +75,6 @@ public class GeneralActivityWithMenu extends GeneralActivity implements Navigati
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        // Handle navigation view item clicks here.
         switch (item.getItemId()) {
             case R.id.history:
                 startActivity(TransactionHistoryActivity.class, false);

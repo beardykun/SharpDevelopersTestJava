@@ -4,8 +4,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
-import com.iamagamedev.sharpdeveloperstestjava.repository.models.TransactionObject;
-
 public class SharedPreferencesClass {
 
     public static void saveStringInPreferences(String saveString, String token) {
@@ -28,7 +26,7 @@ public class SharedPreferencesClass {
         return null;
     }
 
-    public static void deleteFromPrefs(){
+    public static void deleteFromPrefs() {
         Context context = ThisApplication.getInstance();
         SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(context).edit();
         editor.clear();
@@ -40,7 +38,7 @@ public class SharedPreferencesClass {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         if (preferences.contains(saveStr)) {
             String result = preferences.getString(saveStr, null);
-            if(!result.isEmpty() || !result.equals("")){
+            if (!result.isEmpty() || !result.equals("")) {
                 return true;
             }
         }

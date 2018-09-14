@@ -15,12 +15,12 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.UserListViewHolder>{
+public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.UserListViewHolder> {
 
     private List<UserListObject> mUserListObjects;
     private OnUserListItemListener listener;
 
-    interface OnUserListItemListener{
+    interface OnUserListItemListener {
         void onUserListItemClick(int position);
     }
 
@@ -28,7 +28,7 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.UserLi
         this.listener = listener;
     }
 
-    public UserListAdapter(List<UserListObject>userListObjects){
+    public UserListAdapter(List<UserListObject> userListObjects) {
         this.mUserListObjects = userListObjects;
     }
 
@@ -52,7 +52,7 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.UserLi
         return mUserListObjects.size();
     }
 
-    public class UserListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class UserListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         @BindView(R.id.userListNameText)
         TextView userListNameText;
@@ -60,7 +60,7 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.UserLi
         TextView userListIdText;
 
 
-         UserListViewHolder(@NonNull View itemView) {
+        UserListViewHolder(@NonNull View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
             itemView.setOnClickListener(this);
@@ -68,7 +68,7 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.UserLi
 
         @Override
         public void onClick(View view) {
-            if (listener != null){
+            if (listener != null) {
                 listener.onUserListItemClick(getAdapterPosition());
             }
         }

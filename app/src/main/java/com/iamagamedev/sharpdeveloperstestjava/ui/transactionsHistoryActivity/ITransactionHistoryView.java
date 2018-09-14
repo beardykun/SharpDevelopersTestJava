@@ -13,5 +13,5 @@ public interface ITransactionHistoryView extends IGeneralView {
 
     void backToProfile(Intent intent);
 
-    void sortList(List<TransactionObject>transactionObjects);
+    void sortList(List<TransactionObject> transactionObjects);
 }

@@ -2,7 +2,6 @@ package com.iamagamedev.sharpdeveloperstestjava.ui.transactionsHistoryActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 
 import com.iamagamedev.sharpdeveloperstestjava.app.Constants;
 import com.iamagamedev.sharpdeveloperstestjava.app.ThisApplication;
@@ -41,7 +40,7 @@ public class TransactionHistoryInteractor implements ITransactionHistoryInteract
 
     @Override
     public void sortList(List<TransactionObject> transactionObjects, String filter, OnTransactionHistoryListener listener) {
-        switch (filter){
+        switch (filter) {
             case Constants.SORT_BY_NAME:
                 sortListByName(transactionObjects);
                 break;
@@ -86,7 +85,6 @@ public class TransactionHistoryInteractor implements ITransactionHistoryInteract
             String name1, name2;
             name1 = customerEvents1.getUsername().toLowerCase().trim();
             name2 = customerEvents2.getUsername().toLowerCase().trim();
-            Log.i("TAG2", name1 + name2);
             return name1.compareTo(name2);
         }
     }

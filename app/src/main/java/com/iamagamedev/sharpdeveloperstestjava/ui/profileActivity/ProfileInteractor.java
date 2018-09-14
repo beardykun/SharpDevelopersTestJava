@@ -1,7 +1,7 @@
 package com.iamagamedev.sharpdeveloperstestjava.ui.profileActivity;
 
-import com.iamagamedev.sharpdeveloperstestjava.utils.Utils;
 import com.iamagamedev.sharpdeveloperstestjava.repository.Repository;
+import com.iamagamedev.sharpdeveloperstestjava.utils.Utils;
 
 public class ProfileInteractor implements IProfileInteractor {
     @Override

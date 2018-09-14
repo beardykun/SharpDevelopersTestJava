@@ -13,5 +13,5 @@ public interface ITransactionHistoryPresenter extends IGeneralPresenter {
 
     void saveObject(TransactionObject object);
 
-    void sortList(List<TransactionObject>transactionObjects, String filter);
+    void sortList(List<TransactionObject> transactionObjects, String filter);
 }

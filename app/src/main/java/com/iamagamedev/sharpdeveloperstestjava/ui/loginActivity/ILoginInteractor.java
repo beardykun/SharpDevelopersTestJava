@@ -4,10 +4,12 @@ import com.iamagamedev.sharpdeveloperstestjava.ui.generalActivity.IGeneralIntera
 
 public interface ILoginInteractor {
 
-    interface OnLoginListener extends IGeneralInteractorListener{
+    interface OnLoginListener extends IGeneralInteractorListener {
 
         void onSuccess(String token);
+
         void onEmailValidationFailed();
+
         void onPasswordValidationFailed();
     }
 

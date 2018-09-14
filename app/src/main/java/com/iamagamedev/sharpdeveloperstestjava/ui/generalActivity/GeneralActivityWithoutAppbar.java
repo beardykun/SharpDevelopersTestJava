@@ -12,9 +12,6 @@ import android.widget.TextView;
 
 import com.iamagamedev.sharpdeveloperstestjava.R;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
 public class GeneralActivityWithoutAppbar extends GeneralActivity {
 
     private RelativeLayout progress;
@@ -41,7 +38,6 @@ public class GeneralActivityWithoutAppbar extends GeneralActivity {
         LayoutInflater layoutInflater = getLayoutInflater();
 
         final View container = layoutInflater.inflate(R.layout.activity_general_without_appbar, (ViewGroup) getWindow().getDecorView(), false);
-        //noinspection ConstantConditions
         layoutInflater.inflate(layoutResID, (ViewGroup) container.findViewById(R.id.cont_root), true);
         super.setContentView(container);
 
@@ -68,18 +64,16 @@ public class GeneralActivityWithoutAppbar extends GeneralActivity {
                     public void onClick(View view) {
                     }
                 });
-        // Change background color
         snackbar.getView().setBackgroundColor(getResources().getColor(R.color.white));
-        // Changing action button text color
         snackbar.setActionTextColor(getResources().getColor(R.color.black));
 
-        // Changing message text color
         View sbView = snackbar.getView();
-        TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
+        TextView textView = sbView.findViewById(android.support.design.R.id.snackbar_text);
         textView.setTextColor(getResources().getColor(R.color.black));
         textView.setMaxLines(10);
         snackbar.show();
     }
+
     public void showErrorSnack(final String error) {
         showErrorSnack(error, coordinatorLayout);
     }

@@ -7,13 +7,13 @@ import com.iamagamedev.sharpdeveloperstestjava.repository.models.TransactionObje
 
 import java.util.List;
 
-public class TransactionHistoryPresenter implements ITransactionHistoryPresenter ,
-        ITransactionHistoryInteractor.OnTransactionHistoryListener{
+public class TransactionHistoryPresenter implements ITransactionHistoryPresenter,
+        ITransactionHistoryInteractor.OnTransactionHistoryListener {
 
     private ITransactionHistoryView view;
     private ITransactionHistoryInteractor interactor;
 
-    public TransactionHistoryPresenter(){
+    public TransactionHistoryPresenter() {
         interactor = new TransactionHistoryInteractor();
     }
 
@@ -24,7 +24,7 @@ public class TransactionHistoryPresenter implements ITransactionHistoryPresenter
 
     @Override
     public void getTransactionList() {
-        if (view != null){
+        if (view != null) {
             view.showProgress();
             interactor.getTransactionList(this);
         }
@@ -32,7 +32,7 @@ public class TransactionHistoryPresenter implements ITransactionHistoryPresenter
 
     @Override
     public void saveObject(TransactionObject object) {
-        if (view != null){
+        if (view != null) {
             view.showProgress();
             interactor.verifyRequest(object, this);
         }
@@ -40,7 +40,7 @@ public class TransactionHistoryPresenter implements ITransactionHistoryPresenter
 
     @Override
     public void sortList(List<TransactionObject> transactionObjects, String filter) {
-        if (view != null){
+        if (view != null) {
             view.showProgress();
             interactor.sortList(transactionObjects, filter, this);
         }
@@ -53,7 +53,7 @@ public class TransactionHistoryPresenter implements ITransactionHistoryPresenter
 
     @Override
     public void onSuccess(TransactionListObject transactionObjects) {
-        if (view != null){
+        if (view != null) {
             view.hideProgress();
             view.sortList(transactionObjects.getTransactionObjects());
         }

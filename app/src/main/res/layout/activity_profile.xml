@@ -92,8 +92,8 @@
                 android:id="@+id/profileRecipientNameText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:imeOptions="actionDone"
                 android:hint="@string/choose_recipient"
+                android:imeOptions="actionDone"
                 android:inputType="textPersonName"/>
         </android.support.design.widget.TextInputLayout>
 
@@ -120,7 +120,6 @@
         android:layout_alignParentBottom="true"
         android:layout_gravity="bottom"
         android:layout_margin="@dimen/dp16"
-        android:text="Trans"/>
-
+        android:text="@string/transfer"/>
 
 </RelativeLayout>

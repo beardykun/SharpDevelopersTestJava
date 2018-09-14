@@ -10,21 +10,19 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitForMyApp {
 
-private static Retrofit retrofit;
-private static Gson gson;
+    private static AppApi service;
 
-private static AppApi service;
+    private RetrofitForMyApp() {
+    }
 
-private RetrofitForMyApp(){ }
-
-    public static void init(){
-    gson = new GsonBuilder().create();
+    public static void init() {
+        Gson gson = new GsonBuilder().create();
 
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient logger = new OkHttpClient.Builder().addInterceptor(interceptor).build();
 
-        retrofit = new Retrofit.Builder()
+        Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(Urls.BASE_URL)
                 .client(logger)
                 .addConverterFactory(GsonConverterFactory.create(gson))
@@ -34,9 +32,9 @@ private RetrofitForMyApp(){ }
     }
 
     public static AppApi getRetrofitService() {
-    if (service != null){
-        return service;
-    }else
-        throw new IllegalStateException("retrofit not initialized");
+        if (service != null) {
+            return service;
+        } else
+            throw new IllegalStateException("Retrofit not initialized");
     }
 }

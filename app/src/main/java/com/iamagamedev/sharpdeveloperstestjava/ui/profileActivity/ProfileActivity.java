@@ -12,10 +12,10 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.TextView;
 
 import com.iamagamedev.sharpdeveloperstestjava.R;
-import com.iamagamedev.sharpdeveloperstestjava.utils.Utils;
 import com.iamagamedev.sharpdeveloperstestjava.app.Constants;
 import com.iamagamedev.sharpdeveloperstestjava.repository.models.UserListObject;
 import com.iamagamedev.sharpdeveloperstestjava.ui.generalActivity.GeneralActivityWithMenu;
+import com.iamagamedev.sharpdeveloperstestjava.utils.Utils;
 
 import java.util.ArrayList;
 

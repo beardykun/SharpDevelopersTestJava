@@ -12,8 +12,6 @@ import android.widget.RelativeLayout;
 
 import com.iamagamedev.sharpdeveloperstestjava.R;
 
-import butterknife.ButterKnife;
-
 public class GeneralActivityWithAppBar extends GeneralActivity {
     private RelativeLayout progress;
     public CoordinatorLayout coordinatorLayout;
@@ -39,7 +37,6 @@ public class GeneralActivityWithAppBar extends GeneralActivity {
         LayoutInflater layoutInflater = getLayoutInflater();
 
         final View container = layoutInflater.inflate(R.layout.activity_general_with_appbar, (ViewGroup) getWindow().getDecorView(), false);
-        //noinspection ConstantConditions
         layoutInflater.inflate(layoutResID, (ViewGroup) container.findViewById(R.id.cont_root), true);
         super.setContentView(container);
 
@@ -55,7 +52,6 @@ public class GeneralActivityWithAppBar extends GeneralActivity {
             bar.setDisplayShowTitleEnabled(false);
             bar.setDisplayHomeAsUpEnabled(true);
             bar.setDisplayShowHomeEnabled(true);
-            //bar.setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp);
         }
     }
 

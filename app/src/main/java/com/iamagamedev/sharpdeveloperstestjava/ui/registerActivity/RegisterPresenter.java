@@ -8,9 +8,10 @@ public class RegisterPresenter implements IRegisterPresenter, IRegisterInteracto
     private IRegisterView view;
     private IRegisterInteractor interactor;
 
-     RegisterPresenter(){
+    RegisterPresenter() {
         interactor = new RegisterInteractor();
     }
+
     @Override
     public void onAttachView(IRegisterView view) {
         this.view = view;
@@ -31,7 +32,7 @@ public class RegisterPresenter implements IRegisterPresenter, IRegisterInteracto
 
     @Override
     public void onUsernameValidationFailed() {
-        if (view != null){
+        if (view != null) {
             view.hideProgress();
             view.showUsernameValidationError();
         }
@@ -39,7 +40,7 @@ public class RegisterPresenter implements IRegisterPresenter, IRegisterInteracto
 
     @Override
     public void onPasswordValidationFailed() {
-        if (view != null){
+        if (view != null) {
             view.hideProgress();
             view.showPasswordValidationError();
         }
@@ -47,7 +48,7 @@ public class RegisterPresenter implements IRegisterPresenter, IRegisterInteracto
 
     @Override
     public void onPassword2ValidationFailed() {
-        if (view != null){
+        if (view != null) {
             view.hideProgress();
             view.showPassword2ValidationError();
         }
@@ -55,7 +56,7 @@ public class RegisterPresenter implements IRegisterPresenter, IRegisterInteracto
 
     @Override
     public void onEmailValidationFailed() {
-        if (view != null){
+        if (view != null) {
             view.hideProgress();
             view.showEmailValidationError();
         }
@@ -63,7 +64,7 @@ public class RegisterPresenter implements IRegisterPresenter, IRegisterInteracto
 
     @Override
     public void onSuccess() {
-        if (view != null){
+        if (view != null) {
             view.hideProgress();
             view.onRegistrationCompleted();
         }

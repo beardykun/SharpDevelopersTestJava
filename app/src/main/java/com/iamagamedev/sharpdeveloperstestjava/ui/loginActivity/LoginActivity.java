@@ -3,7 +3,6 @@ package com.iamagamedev.sharpdeveloperstestjava.ui.loginActivity;
 import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
-import android.view.WindowManager;
 
 import com.iamagamedev.sharpdeveloperstestjava.R;
 import com.iamagamedev.sharpdeveloperstestjava.ui.generalActivity.GeneralActivityWithoutAppbar;

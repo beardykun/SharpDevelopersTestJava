@@ -3,12 +3,12 @@ package com.iamagamedev.sharpdeveloperstestjava.ui.loginActivity;
 import com.iamagamedev.sharpdeveloperstestjava.R;
 import com.iamagamedev.sharpdeveloperstestjava.app.ThisApplication;
 
-public class LoginPresenter implements ILoginPresenter, ILoginInteractor.OnLoginListener{
+public class LoginPresenter implements ILoginPresenter, ILoginInteractor.OnLoginListener {
 
     private ILoginView view;
     private ILoginInteractor interactor;
 
-     LoginPresenter(){
+    LoginPresenter() {
         interactor = new LoginInteractor();
     }
 
@@ -19,7 +19,7 @@ public class LoginPresenter implements ILoginPresenter, ILoginInteractor.OnLogin
 
     @Override
     public void loginUser(String email, String password) {
-        if (view != null){
+        if (view != null) {
             view.showProgress();
             interactor.loginUser(email, password, this);
         }
@@ -32,7 +32,7 @@ public class LoginPresenter implements ILoginPresenter, ILoginInteractor.OnLogin
 
     @Override
     public void onSuccess(String token) {
-        if (view != null){
+        if (view != null) {
             view.hideProgress();
             interactor.saveToken(token);
             view.goToProfile();
@@ -41,7 +41,7 @@ public class LoginPresenter implements ILoginPresenter, ILoginInteractor.OnLogin
 
     @Override
     public void onEmailValidationFailed() {
-        if (view != null){
+        if (view != null) {
             view.hideProgress();
             view.showEmailValidationError();
         }
@@ -49,7 +49,7 @@ public class LoginPresenter implements ILoginPresenter, ILoginInteractor.OnLogin
 
     @Override
     public void onPasswordValidationFailed() {
-        if (view != null){
+        if (view != null) {
             view.hideProgress();
             view.showPasswordValidationError();
         }
@@ -57,8 +57,8 @@ public class LoginPresenter implements ILoginPresenter, ILoginInteractor.OnLogin
 
     @Override
     public void onError(String error, int... code) {
-        if (view != null){
-            if (code[0] == 401){
+        if (view != null) {
+            if (code[0] == 401) {
                 error = ThisApplication.getInstance().getString(R.string.invalid_email_or_password);
             }
             view.hideProgress();

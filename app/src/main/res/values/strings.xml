@@ -50,4 +50,5 @@
     </string>
     <string name="action_settings">Settings</string>
     <string name="search_transaction">Search transaction</string>
+    <string name="transfer">Transfer</string>
 </resources>

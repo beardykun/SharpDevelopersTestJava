@@ -9,7 +9,7 @@ import com.iamagamedev.sharpdeveloperstestjava.R;
 
 public class SettingsFragment extends PreferenceFragment {
 
-    public SettingsFragment(){
+    public SettingsFragment() {
 
     }
 

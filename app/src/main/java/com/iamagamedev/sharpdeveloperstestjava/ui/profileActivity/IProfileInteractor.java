@@ -11,14 +11,19 @@ public interface IProfileInteractor {
 
     interface OnProfileListener extends IGeneralInteractorListener {
         void onSuccessUserInfo(UserObject userObject);
+
         void onSuccessCreateTransaction(TransactionObject transactionObject);
+
         void onSuccessUsersList(ArrayList<UserListObject> userListObjects);
+
         void onCreateTransactionError(String error, int... code);
 
         void onRecipientValidationFailed();
+
         void onAmountValidationFailed();
+
         void amountMoreThanBalance();
-        }
+    }
 
     void getUserInfo(OnProfileListener listener);
 

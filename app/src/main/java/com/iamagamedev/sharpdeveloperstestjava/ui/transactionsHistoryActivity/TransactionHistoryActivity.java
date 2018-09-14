@@ -74,6 +74,8 @@ public class TransactionHistoryActivity extends GeneralActivity
     @Override
     protected void onStop() {
         presenter.onDetachView();
+        PreferenceManager.getDefaultSharedPreferences(this)
+                .unregisterOnSharedPreferenceChangeListener(onSharedPreferenceChangeListener);
         super.onStop();
     }
 
@@ -101,7 +103,6 @@ public class TransactionHistoryActivity extends GeneralActivity
     public void populateAdapter(List<TransactionObject> transactionObjects) {
         adapter = new TransactionsListAdapter(transactionObjects);
         adapter.setListener(this);
-
         transactionsRecyclerView.setAdapter(adapter);
     }
 
