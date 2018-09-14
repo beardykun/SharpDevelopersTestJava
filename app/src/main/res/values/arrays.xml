@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string-array name="sorting_options">
+    <item>None</item>
+    <item>Name</item>
+    <item>Date</item>
+    <item>Amount</item>
+</string-array>
+</resources>

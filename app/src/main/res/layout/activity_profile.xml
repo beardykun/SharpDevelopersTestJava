@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.profileActivity.ProfileActivity">
+
+    <LinearLayout
+        android:id="@+id/userLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/gray_e4e4e4"
+        android:orientation="vertical"
+        android:padding="@dimen/dp16">
+
+        <TextView
+            style="@style/Base.TextAppearance.AppCompat.Headline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="User Info"/>
+
+        <TextView
+            style="@style/MediumText"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:text="@string/username"/>
+
+        <TextView
+            android:id="@+id/profileUsernameText"
+            style="@style/MediumText.Read"
+            android:layout_marginBottom="@dimen/dimen_8"
+            android:drawablePadding="@dimen/dp16"
+            android:drawableStart="@drawable/ic_person_black_24dp"
+            android:gravity="center_vertical"
+            tools:text="Current User"/>
+
+        <TextView
+            style="@style/MediumText"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:text="@string/user_balance"/>
+
+        <TextView
+            android:id="@+id/profileBalanceText"
+            style="@style/MediumText.Read"
+            android:layout_marginBottom="@dimen/dimen_8"
+            android:drawablePadding="@dimen/dp16"
+            android:drawableStart="@drawable/ic_account_balance_wallet_black_24dp"
+            android:gravity="center_vertical"
+            tools:text="150"/>
+
+        <TextView
+            style="@style/MediumText"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:text="@string/email"/>
+
+        <TextView
+            android:id="@+id/profileEmailText"
+            style="@style/MediumText.Read"
+            android:layout_marginBottom="@dimen/dimen_8"
+            android:drawablePadding="@dimen/dp16"
+            android:drawableStart="@drawable/ic_email_black_24dp"
+            android:gravity="center_vertical"
+            tools:text="q@q.com"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/userLayout"
+        android:orientation="vertical">
+
+
+        <TextView
+            style="@style/Base.TextAppearance.AppCompat.Headline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp16"
+            android:text="@string/new_transaction"/>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/profileRecipientNameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp16">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/profileRecipientNameText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionDone"
+                android:hint="@string/choose_recipient"
+                android:inputType="textPersonName"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/profileSendAmountLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp16">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/profileSendAmountEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/enter_amount_to_transfer"
+                android:inputType="number"/>
+
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/createTransactionBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:layout_margin="@dimen/dp16"
+        android:text="Trans"/>
+
+
+</RelativeLayout>
