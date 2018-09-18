@@ -3,7 +3,9 @@ package com.iamagamedev.sharpdeveloperstestjava.ui.transactionsHistoryActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.iamagamedev.sharpdeveloperstestjava.R;
 import com.iamagamedev.sharpdeveloperstestjava.app.Constants;
+import com.iamagamedev.sharpdeveloperstestjava.app.SharedPreferencesClass;
 import com.iamagamedev.sharpdeveloperstestjava.app.ThisApplication;
 import com.iamagamedev.sharpdeveloperstestjava.repository.Repository;
 import com.iamagamedev.sharpdeveloperstestjava.repository.models.TransactionObject;
@@ -28,7 +30,7 @@ public class TransactionHistoryInteractor implements ITransactionHistoryInteract
     @Override
     public void verifyRequest(TransactionObject transactionObject, OnTransactionHistoryListener listener) {
         if (Integer.parseInt(transactionObject.getAmount()) > 0) {
-            listener.onError("Can'n use receive transactions as basis");
+            listener.onError(ThisApplication.getInstance().getString(R.string.minus_transaction));
         } else {
             Intent intent = new Intent(ThisApplication.getInstance(), ProfileActivity.class);
             Bundle bundle = new Bundle();

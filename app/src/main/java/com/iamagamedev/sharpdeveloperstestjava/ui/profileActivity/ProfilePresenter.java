@@ -3,6 +3,7 @@ package com.iamagamedev.sharpdeveloperstestjava.ui.profileActivity;
 import android.os.Bundle;
 
 import com.iamagamedev.sharpdeveloperstestjava.app.Constants;
+import com.iamagamedev.sharpdeveloperstestjava.app.SharedPreferencesClass;
 import com.iamagamedev.sharpdeveloperstestjava.repository.models.TransactionObject;
 import com.iamagamedev.sharpdeveloperstestjava.repository.models.UserListObject;
 import com.iamagamedev.sharpdeveloperstestjava.repository.models.UserObject;
@@ -52,7 +53,8 @@ public class ProfilePresenter implements IProfilePresenter, IProfileInteractor.O
         if (view != null) {
             view.showProgress();
             TransactionObject object = bundle.getParcelable(Constants.SAVE_TRANSACTION);
-            view.setTransactionData(object.getUsername(), object.getAmount());
+            String amount = object.getAmount().replace("-", "");
+            view.setTransactionData(object.getUsername(), amount);
             view.hideProgress();
         }
     }
@@ -66,6 +68,7 @@ public class ProfilePresenter implements IProfilePresenter, IProfileInteractor.O
     public void onSuccessUserInfo(UserObject userObject) {
         if (view != null) {
             view.hideProgress();
+            saveUsername(userObject.getName());
             view.populateViews(userObject.getId(), userObject.getName(),
                     userObject.getEmail(), userObject.getBalance());
         }
@@ -130,5 +133,9 @@ public class ProfilePresenter implements IProfilePresenter, IProfileInteractor.O
             view.hideProgress();
             view.amountMoreThanBalance();
         }
+    }
+
+    private void saveUsername(String username){
+        SharedPreferencesClass.saveStringInPreferences(Constants.SAVE_USERNAME, username);
     }
 }

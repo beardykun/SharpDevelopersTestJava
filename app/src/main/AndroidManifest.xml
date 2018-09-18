@@ -41,7 +41,8 @@
             android:parentActivityName=".ui.profileActivity.ProfileActivity"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".ui.transactionsHistoryActivity.settings.SettingsActivity">
+        <activity android:name=".ui.transactionsHistoryActivity.settings.SettingsActivity"
+        android:screenOrientation="portrait">
         </activity>
     </application>
 

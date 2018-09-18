@@ -1,5 +1,9 @@
 package com.iamagamedev.sharpdeveloperstestjava.ui.profileActivity;
 
+import com.iamagamedev.sharpdeveloperstestjava.R;
+import com.iamagamedev.sharpdeveloperstestjava.app.Constants;
+import com.iamagamedev.sharpdeveloperstestjava.app.SharedPreferencesClass;
+import com.iamagamedev.sharpdeveloperstestjava.app.ThisApplication;
 import com.iamagamedev.sharpdeveloperstestjava.repository.Repository;
 import com.iamagamedev.sharpdeveloperstestjava.utils.Utils;
 
@@ -30,6 +34,9 @@ public class ProfileInteractor implements IProfileInteractor {
             return false;
         } else if (Integer.parseInt(amount) > Integer.parseInt(balance)) {
             listener.amountMoreThanBalance();
+            return false;
+        }else if (name.equals(SharedPreferencesClass.getStringFromPreferences(Constants.SAVE_USERNAME))){
+            listener.onError(ThisApplication.getInstance().getString(R.string.self_transfer));
             return false;
         }
         return true;
