@@ -10,6 +10,7 @@ import android.support.v4.app.FragmentManager;
 import android.view.KeyEvent;
 import android.view.inputmethod.EditorInfo;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.iamagamedev.sharpdeveloperstestjava.R;
 import com.iamagamedev.sharpdeveloperstestjava.app.Constants;
@@ -105,13 +106,16 @@ public class ProfileActivity extends GeneralActivityWithMenu implements IProfile
 
     @Override
     public void callUserListDialog(ArrayList<UserListObject> userListObjects) {
-        final FragmentManager fm = getSupportFragmentManager();
-        UserListFragment fragment = new UserListFragment();
-        Bundle args = new Bundle();
-        args.putParcelableArrayList(Constants.SAVE_LIST, userListObjects);
-        fragment.setArguments(args);
-
-        fragment.show(fm, "tag");
+        if (userListObjects.isEmpty()){
+            Toast.makeText(this, R.string.not_found_user, Toast.LENGTH_SHORT).show();
+        }else {
+            final FragmentManager fm = getSupportFragmentManager();
+            UserListFragment fragment = new UserListFragment();
+            Bundle args = new Bundle();
+            args.putParcelableArrayList(Constants.SAVE_LIST, userListObjects);
+            fragment.setArguments(args);
+            fragment.show(fm, "tag");
+        }
     }
 
     @Override
@@ -152,10 +156,9 @@ public class ProfileActivity extends GeneralActivityWithMenu implements IProfile
     @Override
     public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
         if (i == EditorInfo.IME_ACTION_DONE) {
-            presenter.getUsersList(profileRecipientNameText.getText().toString());
+            presenter.getUsersList(textView.getText().toString());
             return true;
         }
         return false;
     }
-
 }
