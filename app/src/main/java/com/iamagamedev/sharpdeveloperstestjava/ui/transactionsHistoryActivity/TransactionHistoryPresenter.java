@@ -55,7 +55,7 @@ public class TransactionHistoryPresenter implements ITransactionHistoryPresenter
     public void onSuccess(TransactionListObject transactionObjects) {
         if (view != null) {
             view.hideProgress();
-            if (transactionObjects.getTransactionObjects().isEmpty()){
+            if (transactionObjects.getTransactionObjects().size() == 0){
                 view.finishActivity();
             }else {
                 view.sortList(transactionObjects.getTransactionObjects());

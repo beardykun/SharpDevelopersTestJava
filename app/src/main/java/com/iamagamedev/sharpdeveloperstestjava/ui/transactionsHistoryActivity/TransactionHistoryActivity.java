@@ -73,7 +73,7 @@ public class TransactionHistoryActivity extends GeneralActivity
     protected void onStart() {
         super.onStart();
         if (preferencesChanged) {
-            filter = PreferenceManager.getDefaultSharedPreferences(this).getString(Constants.SORTING, null);
+            filter = PreferenceManager.getDefaultSharedPreferences(this).getString(Constants.SORTING, Constants.SORT_NOT);
             preferencesChanged = false;
         }
         presenter.onAttachView(this);
