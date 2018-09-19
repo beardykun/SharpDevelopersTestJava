@@ -12,6 +12,7 @@ import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.iamagamedev.sharpdeveloperstestjava.R;
 import com.iamagamedev.sharpdeveloperstestjava.app.Constants;
@@ -179,5 +180,11 @@ public class TransactionHistoryActivity extends GeneralActivity
     public boolean onQueryTextChange(String s) {
         adapter.getFilter().filter(s);
         return true;
+    }
+
+    @Override
+    public void finishActivity() {
+        Toast.makeText(this, R.string.empty_history, Toast.LENGTH_LONG).show();
+        finish();
     }
 }

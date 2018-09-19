@@ -52,4 +52,5 @@
     <string name="minus_transaction">Can\'t use receive transactions as basis</string>
     <string name="self_transfer">Can\'t make transaction to yourself</string>
     <string name="not_found_user">Username is not registered in Database</string>
+    <string name="empty_history">Transactions history is empty</string>
 </resources>
