@@ -1,13 +1,13 @@
 package com.iamagamedev.sharpdeveloperstestjava.ui.registerActivity;
 
-import com.iamagamedev.sharpdeveloperstestjava.repository.Repository;
+import com.iamagamedev.sharpdeveloperstestjava.repository.repClasses.RepositoryLoginRegister;
 
 public class RegisterInteractor implements IRegisterInteractor {
 
     @Override
     public void registerUser(String username, String password, String password2, String email, OnRegisterListener listener) {
         if (validate(username, password, password2, email, listener))
-            Repository.registerUser(username, password, email, listener);
+            RepositoryLoginRegister.registerUser(username, password, email, listener);
     }
 
     private boolean validate(String username, String password, String password2,

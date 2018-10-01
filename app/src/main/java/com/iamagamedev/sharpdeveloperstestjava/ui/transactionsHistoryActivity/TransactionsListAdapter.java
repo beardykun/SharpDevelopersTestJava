@@ -128,6 +128,7 @@ public class TransactionsListAdapter extends RecyclerView.Adapter<TransactionsLi
         protected void publishResults(CharSequence constraint, FilterResults results) {
             transactionObjects2 = (List<TransactionObject>) results.values;
             notifyDataSetChanged();
+
         }
     }
 

@@ -2,14 +2,14 @@ package com.iamagamedev.sharpdeveloperstestjava.ui.loginActivity;
 
 import com.iamagamedev.sharpdeveloperstestjava.app.Constants;
 import com.iamagamedev.sharpdeveloperstestjava.app.SharedPreferencesClass;
-import com.iamagamedev.sharpdeveloperstestjava.repository.Repository;
+import com.iamagamedev.sharpdeveloperstestjava.repository.repClasses.RepositoryLoginRegister;
 
 public class LoginInteractor implements ILoginInteractor {
 
     @Override
     public void loginUser(String email, String password, OnLoginListener listener) {
         if (validate(email, password, listener)) {
-            Repository.loginUser(email, password, listener);
+            RepositoryLoginRegister.loginUser(email, password, listener);
         }
     }
 

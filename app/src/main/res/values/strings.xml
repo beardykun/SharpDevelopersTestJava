@@ -53,4 +53,5 @@
     <string name="self_transfer">Can\'t make transaction to yourself</string>
     <string name="not_found_user">Username is not registered in Database</string>
     <string name="empty_history">Transactions history is empty</string>
+    <string name="don_t_have_an_account_yet">Don\'t have an account yet?</string>
 </resources>

@@ -5,9 +5,8 @@ import android.os.Bundle;
 
 import com.iamagamedev.sharpdeveloperstestjava.R;
 import com.iamagamedev.sharpdeveloperstestjava.app.Constants;
-import com.iamagamedev.sharpdeveloperstestjava.app.SharedPreferencesClass;
 import com.iamagamedev.sharpdeveloperstestjava.app.ThisApplication;
-import com.iamagamedev.sharpdeveloperstestjava.repository.Repository;
+import com.iamagamedev.sharpdeveloperstestjava.repository.repClasses.RepositoryTransactions;
 import com.iamagamedev.sharpdeveloperstestjava.repository.models.TransactionObject;
 import com.iamagamedev.sharpdeveloperstestjava.ui.profileActivity.ProfileActivity;
 import com.iamagamedev.sharpdeveloperstestjava.utils.Utils;
@@ -24,7 +23,7 @@ public class TransactionHistoryInteractor implements ITransactionHistoryInteract
 
     @Override
     public void getTransactionList(OnTransactionHistoryListener listener) {
-        Repository.getTransactionList(Utils.getToken(), listener);
+        RepositoryTransactions.getTransactionList(Utils.getToken(), listener);
     }
 
     @Override
